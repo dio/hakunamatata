@@ -10,12 +10,12 @@ jobs:
     vmImage: "windows-latest"
 
   steps:
-    #- powershell: |
-    #    .\ci\windows_ci_setup.ps1
-    #    Write-Host "##vso[task.prependpath]$env:TOOLS_BIN_DIR"
-    #  displayName: "Install dependencies"
-    #  env:
-    #    TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
+    - powershell: |
+        .\ci\windows_ci_setup.ps1
+        Write-Host "##vso[task.prependpath]$env:TOOLS_BIN_DIR"
+      displayName: "Install dependencies"
+      env:
+        TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
     - bash: |
         ls -la "/c/Program Files (x86)"
     - script: |
