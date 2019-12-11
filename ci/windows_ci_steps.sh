@@ -11,6 +11,10 @@ trap finish EXIT
 echo "disk space at beginning of build:"
 df -h
 
+ls -la "/c/Program Files (x86)/Windows Kits/10/bin/x64/"
+cp "/c/Program Files (x86)/Windows Kits/10/bin/x64/rc.exe" "/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/rc.exe"
+cp "/c/Program Files (x86)/Windows Kits/10/bin/x64/rcdll.dll" "/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/rcdll.dll"
+
 . "$(dirname "$0")"/setup_cache.sh
 
 BAZEL_STARTUP_OPTIONS="--bazelrc=windows/.bazelrc"
