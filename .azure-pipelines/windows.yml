@@ -7,7 +7,7 @@ jobs:
 - job: Windows
   timeoutInMinutes: 360
   pool:
-    vmImage: "windows-2019"
+    vmImage: "windows-2017"
 
   steps:
     - powershell: |
@@ -18,8 +18,8 @@ jobs:
         TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
     - bash: |
         ls -la "/c/Program Files/"
-        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise"
+        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise"
     - script: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        "C:\Program Files\Git\bin\bash.exe" ci\windows_ci_steps.sh
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        "C:\Program Files\Git\bin\bash.exe" --login
       displayName: "Run Windows CI"
