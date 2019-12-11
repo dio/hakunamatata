@@ -10,17 +10,16 @@ jobs:
     vmImage: "vs2017-win2016"
 
   steps:
-    - powershell: |
-        .\ci\windows_ci_setup.ps1
-        Write-Host "##vso[task.prependpath]$env:TOOLS_BIN_DIR"
-      displayName: "Install dependencies"
-      env:
-        TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
+    #- powershell: |
+    #    .\ci\windows_ci_setup.ps1
+    #    Write-Host "##vso[task.prependpath]$env:TOOLS_BIN_DIR"
+    #  displayName: "Install dependencies"
+    #  env:
+    #    TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
     - bash: |
-        ls -la "/c/Program Files/"
-        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise"
-    - script: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        "C:\Program Files\Git\bin\bash.exe" --login
-        "C:\Program Files\Git\bin\bash.exe" ci\windows_ci_steps.sh
-      displayName: "Run Windows CI"
+        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/bin/amd64"
+    #- script: |
+    #    call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+    #    "C:\Program Files\Git\bin\bash.exe" --login
+    #    "C:\Program Files\Git\bin\bash.exe" ci\windows_ci_steps.sh
+    #  displayName: "Run Windows CI"
