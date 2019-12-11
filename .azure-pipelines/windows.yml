@@ -17,7 +17,7 @@ jobs:
     #  env:
     #    TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
     - bash: |
-        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/"
+        ls -la "/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools"
     #- script: |
     #    call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     #    "C:\Program Files\Git\bin\bash.exe" --login
