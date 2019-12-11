@@ -8,4 +8,4 @@ $wc = New-Object System.Net.WebClient
 $wc.DownloadFile("https://github.com/bazelbuild/bazelisk/releases/download/v1.0/bazelisk-windows-amd64.exe", "$env:TOOLS_BIN_DIR\bazel.exe")
 
 $choco = "$Env:ProgramData/chocolatey/choco.exe"
-$choco install -y -f --acceptlicense --no-progress ninja
+iex "$choco install -y -f --acceptlicense --no-progress ninja"
