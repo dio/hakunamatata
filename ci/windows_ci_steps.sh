@@ -11,12 +11,6 @@ trap finish EXIT
 echo "disk space at beginning of build:"
 df -h
 
-"/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/vcvars64.bat"
-export PATH="/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/":${PATH}
-which rc || echo "not found"
-which rc.exe || echo "not found"
-echo ${PATH}
-
 . "$(dirname "$0")"/setup_cache.sh
 
 BAZEL_STARTUP_OPTIONS="--bazelrc=windows/.bazelrc"

@@ -17,5 +17,7 @@ jobs:
       env:
         TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
 
-    - bash: ci/windows_ci_steps.sh
+    - script: |
+        CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
+        "C:\Program Files (x86)\Git\bin\bash.exe" ci/windows_ci_steps.sh
       displayName: "Run Windows CI"
