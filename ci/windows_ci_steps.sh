@@ -13,6 +13,10 @@ df -h
 
 ls -la "/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/"
 
+cd "/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Auxiliary/Build"
+./vcvars64.bat -vcvars_ver=14.0
+cd -
+
 export PATH="/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/":${PATH}
 which rc || echo "not found"
 which rc.exe || echo "not found"
