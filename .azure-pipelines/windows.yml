@@ -16,7 +16,9 @@ jobs:
     #  displayName: "Install dependencies"
     #  env:
     #    TOOLS_BIN_DIR: $(Pipeline.Workspace)\bin
+    - bash: |
+        ls -la "/c/Program Files (x86)"
     - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
-        call "ci\windows_ci_steps.sh"
+        "C:\Program Files (x86)\Git\bin\bash.exe" "ci\windows_ci_steps.sh"
       displayName: "Run Windows CI"
