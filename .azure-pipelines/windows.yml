@@ -1,7 +1,7 @@
 # Azure Pipelines
 # TODO(lizan): Consider rolling all presubmit jobs into one file.
 trigger:
-- master
+- win
 
 jobs:
 - job: Windows
