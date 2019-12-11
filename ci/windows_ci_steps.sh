@@ -11,10 +11,7 @@ trap finish EXIT
 echo "disk space at beginning of build:"
 df -h
 
-which rc
-which rc.exe
-ls -la "/c/Program Files (x86)/Windows Kits/10/bin/x64/"
-ls -la "/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/"
+export PATH="/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/":${PATH}
 
 . "$(dirname "$0")"/setup_cache.sh
 
