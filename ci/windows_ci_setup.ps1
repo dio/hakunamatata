@@ -29,6 +29,6 @@ $wc.DownloadFile("https://github.com/bazelbuild/bazelisk/releases/download/v1.0/
 $wc.DownloadFile("https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip", "$env:TOOLS_BIN_DIR\ninja-win.zip")
 
 Checksum $env:TOOLS_BIN_DIR\bazel.exe 96395ee9e3fb9f4499fcaffa8a94dd72b0748f495f366bc4be44dbf09d6827fc SHA256
-Checksum $env:TOOLS_BIN_DIR\ninja-win.2d70010633ddaacc3af4ffbd21e22fae90d158674a09e132e06424ba3ab036e9 zip SHA256
+Checksum $env:TOOLS_BIN_DIR\ninja-win.zip 2d70010633ddaacc3af4ffbd21e22fae90d158674a09e132e06424ba3ab036e9 SHA256
 
 Unzip "$env:TOOLS_BIN_DIR\ninja-win.zip" "$env:TOOLS_BIN_DIR"
