@@ -14,13 +14,7 @@ function Checksum
 {
     param([string]$filepath, [string]$expected, [string]$algorithm)
 
-    $actual = Get-FileHash -Path $filePath -Algorithm $algorithm;
-    if ($actual.Hash -eq $expected) {
-        Write-Host "$filepath is valid";
-    } else {
-        Write-Host "$filepath is invalid, expected: $expected, but got: $actual";
-        exit 1
-    }
+    exit 1
 }
 
 mkdir "$env:TOOLS_BIN_DIR"
